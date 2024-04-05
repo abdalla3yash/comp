@@ -45,5 +45,15 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Comp needs access to your camera to take video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Comp needs access to your photo library to select video</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Comp needs access to your microphone for recording video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Our app needs access to your photo library to generate video thumbnails.</string>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 </dict>
 </plist>
