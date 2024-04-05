@@ -45,7 +45,6 @@ class VideoCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const VerticalSpace(AppPadding.p8),
                       SizedBox(
                         width: deviceWidth * 0.45,
                         child: Text(
@@ -81,18 +80,16 @@ class VideoCard extends StatelessWidget {
                             CustomButton(
                               borderRadius: AppSize.s8,
                               color: AppColors.primary,
-                              text: "View",
-                              height: AppSize.s32,
-                              onPressed: () => NavigationService.push(
-                                  context, Routes.videoPlayerScreen,
-                                  arguments: {'videoPath': videoData.mediaInfo!.file!.path}),
+                              text: "View",    
+                              height: AppSize.s24,
+                              onPressed: () => NavigationService.push(context, Routes.videoPlayerScreen, arguments: {'videoPath': videoData.mediaInfo!.file!.path}),
                             ),
                             CustomButton(
                               borderRadius: AppSize.s8,
                               color: AppColors.secondary,
                               text: "Upload",
-                              height: AppSize.s32,
-                              onPressed: () =>null,
+                              height: AppSize.s24,
+                              onPressed: () => Toaster('comming soon!'),
                             ),
                           ],
                         ),
@@ -104,8 +101,8 @@ class VideoCard extends StatelessWidget {
             ),
       listener: (context, state) {
         if (state.requestState == RequestState.failure) {
-          log(state.failure!);
-          Alerts(context, state.failure!);
+          log(state.failure!.message);
+          Alerts(context, state.failure!.message);
         }
       },
     );

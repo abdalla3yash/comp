@@ -30,11 +30,10 @@ class LoaderVideoCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SpinKitCubeGrid(color: AppColors.primary, size: 52),
+                      const SpinKitCubeGrid(color: AppColors.primary, size: AppSize.s48),
                       const VerticalSpace(AppPadding.p8),
                       if (state.progress != null)
-                        Text('${state.progress.toString().substring(0, 2)} %',
-                          style: const TextStyle(fontSize: 18, color: AppColors.black)),
+                        Text('${state.progress.toString().substring(0, 2)} %',style: const TextStyle(fontSize: 18, color: AppColors.black)),
                     ],
                   ),
                 ),

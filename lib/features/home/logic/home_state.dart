@@ -7,7 +7,7 @@ enum RequestType { none, pick, post }
 class HomeState {
   final RequestState requestState;
   final RequestType requestType;
-  final String? failure;
+  final Failure? failure;
   final List<VideoModel>? videos;
   final double? progress;
 
@@ -22,7 +22,7 @@ class HomeState {
   HomeState copyWith({
     RequestState? requestState,
     RequestType? requestType,
-    String? failure,
+    Failure? failure,
     List<VideoModel>? videos,
     double? progress,
   }) =>

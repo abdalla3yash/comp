@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
+import 'package:comp/core/services/error/failure.dart';
 import 'package:comp/core/utils/logger.dart';
 import 'package:comp/features/home/model/video_model.dart';
+import 'package:comp/features/home/repositories/home_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_compress/video_compress.dart';
@@ -10,7 +12,9 @@ import 'package:video_thumbnail/video_thumbnail.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeState());
+  final HomeRepository repository;
+  HomeCubit(this.repository) : super(HomeState());
+
 
   Subscription? _subscription;
 
@@ -49,10 +53,30 @@ class HomeCubit extends Cubit<HomeState> {
       emit(state.copyWith(videos: allVideos, requestState: RequestState.success, requestType: RequestType.pick));
     } catch (e) {
       log(e.toString());
-      emit(state.copyWith(requestState: RequestState.failure, failure: e.toString(), requestType: RequestType.pick));
+      emit(state.copyWith(requestState: RequestState.failure, failure:  Failure(404, e.toString()), requestType: RequestType.pick));
     }
   }
 
 
   Future cancel() async => _subscription!.unsubscribe();
+
+
+  Future postVideo({required String formData, required Map<String, dynamic> parameters}) async {
+    print('post data ${formData.toString()}');
+    emit(state.copyWith(requestType: RequestType.post, requestState: RequestState.loading));
+    final result = await repository.getUploadUrl(parameters: parameters);
+    result.fold(
+      (failure) => emit(state.copyWith(failure: failure, requestType: RequestType.post,requestState: RequestState.failure)),
+      (response) async {
+        final postData = await repository.postVideo(formData: formData, serverResponse: response);
+
+        log(postData.toString());
+        
+        postData.fold(
+          (failure) => emit(state.copyWith(failure: failure, requestType: RequestType.post, requestState: RequestState.failure)),
+          (success) => emit(state.copyWith(requestType: RequestType.post,requestState: RequestState.success)));
+        }
+    );
+  }
+
 }
