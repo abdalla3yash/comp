@@ -20,8 +20,7 @@ class HomeCubit extends Cubit<HomeState> {
 
     try {
       // Subscribe to the compression progress
-      _subscription = VideoCompress.compressProgress$.subscribe((progress) =>
-          emit(state.copyWith(requestType: RequestType.pick, requestState: RequestState.loading, progress: progress)));
+      _subscription = VideoCompress.compressProgress$.subscribe((progress) =>  emit(state.copyWith(requestType: RequestType.pick, requestState: RequestState.loading, progress: progress)));
 
       // Compress the video
       final result = await VideoCompress.compressVideo(videoFile.path, quality: VideoQuality.MediumQuality, deleteOrigin: false);
@@ -55,5 +54,5 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
 
-   Future cancel() async => _subscription!.unsubscribe();
+  Future cancel() async => _subscription!.unsubscribe();
 }

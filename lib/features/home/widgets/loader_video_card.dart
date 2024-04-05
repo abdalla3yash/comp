@@ -34,8 +34,7 @@ class LoaderVideoCard extends StatelessWidget {
                       const VerticalSpace(AppPadding.p8),
                       if (state.progress != null)
                         Text('${state.progress.toString().substring(0, 2)} %',
-                            style: const TextStyle(
-                                fontSize: 18, color: AppColors.black)),
+                          style: const TextStyle(fontSize: 18, color: AppColors.black)),
                     ],
                   ),
                 ),
