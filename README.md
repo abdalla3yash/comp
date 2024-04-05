@@ -37,3 +37,12 @@ https://app.moqups.com/bO2jKvSTFx6Hei47OoIS1wAV1aSALpR9/view/page/a880590a1
 #### Final View
 
 <img src="./assets/screenshots/ui.png" width=180>   <img src="./assets/screenshots/bottom.png" width=180>
+
+
+
+
+demo apk 
+
+```
+https://drive.google.com/file/d/1Grek6ecfOGCkBeGiirPVgE8RM0Fjb6ov/view?usp=sharing
+```
