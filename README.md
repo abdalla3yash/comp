@@ -17,6 +17,8 @@ video compress App with Flutter
 
 7- navigation, bottomsheet camera or gallery
 
+8- add cubit (flutter_bloc) , compress video 
+
 
 
 

@@ -36,11 +36,12 @@ dependencies:
   toast: ^0.3.0
   loader_overlay: ^4.0.0
   video_player: ^2.8.3
+  video_thumbnail: ^0.5.3
   flutter_spinkit: ^5.2.1
 
   # Utils
   image_picker: ^1.0.7
-  video_compress_plus: ^1.0.0
+  video_compress: ^3.1.2
   permission_handler: ^11.3.1
   dartz: ^0.10.1
 
