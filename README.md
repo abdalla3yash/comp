@@ -15,6 +15,8 @@ video compress App with Flutter
 
 6- refactor code, done main screen 
 
+7- navigation, bottomsheet camera or gallery
+
 
 
 
@@ -36,4 +38,4 @@ https://app.moqups.com/bO2jKvSTFx6Hei47OoIS1wAV1aSALpR9/view/page/a880590a1
 
 #### Final View
 
-<img src="./assets/screenshots/ui.png" width=180>
+<img src="./assets/screenshots/ui.png" width=180>   <img src="./assets/screenshots/bottom.png" width=180>

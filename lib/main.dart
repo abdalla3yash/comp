@@ -1,3 +1,6 @@
+import 'package:comp/config/navigation/navigation_services.dart';
+import 'package:comp/config/navigation/route_generator.dart';
+import 'package:comp/config/navigation/routes.dart';
 import 'package:comp/config/theme/theme.dart';
 import 'package:comp/features/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Comp',
-        debugShowCheckedModeBanner: false,
-        theme: theme(),
-        home: HomeScreen());
+      title: 'Comp',
+      debugShowCheckedModeBanner: false,
+      theme: theme(),
+      initialRoute: Routes.mainScreen,
+      navigatorKey: NavigationService.navigationKey,
+      onGenerateRoute: RouteGenerator.onGenerateRoute,
+      builder: (context, child) {
+        return child!;
+      },
+    );
   }
 }
