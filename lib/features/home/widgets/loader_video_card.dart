@@ -1,4 +1,3 @@
-
 import 'package:comp/config/theme/colors.dart';
 import 'package:comp/core/utils/values.dart';
 import 'package:comp/core/view/widgets/spaces.dart';
@@ -13,34 +12,36 @@ class LoaderVideoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocConsumer<HomeCubit, HomeState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        return TapEffect(
-          onClick: () => null,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: deviceHeight * 0.2,
-              padding: const EdgeInsets.all(AppPadding.p8),
-              decoration: BoxDecoration(color: AppColors.lightGrey, borderRadius: BorderRadius.circular(AppSize.s24)),
-              child:  Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SpinKitCubeGrid(color: AppColors.primary, size: 52),
-                    const VerticalSpace(AppPadding.p8),
-                    if(state.progress != null)
-                    Text('${state.progress.toString().substring(0,2)} %',style: const TextStyle(fontSize: 18,color: AppColors.black)),
-                    
-                  ],
+    return BlocConsumer<HomeCubit, HomeState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return TapEffect(
+            onClick: () => context.read<HomeCubit>().cancel(),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: deviceHeight * 0.2,
+                padding: const EdgeInsets.all(AppPadding.p8),
+                decoration: BoxDecoration(
+                    color: AppColors.lightGrey,
+                    borderRadius: BorderRadius.circular(AppSize.s24)),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SpinKitCubeGrid(color: AppColors.primary, size: 52),
+                      const VerticalSpace(AppPadding.p8),
+                      if (state.progress != null)
+                        Text('${state.progress.toString().substring(0, 2)} %',
+                            style: const TextStyle(
+                                fontSize: 18, color: AppColors.black)),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        );
-      }
-    );
+          );
+        });
   }
 }

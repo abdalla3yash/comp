@@ -4,7 +4,6 @@ import 'package:comp/config/navigation/routes.dart';
 import 'package:comp/config/theme/theme.dart';
 import 'package:comp/core/services/bloc_observer.dart';
 import 'package:comp/features/home/logic/home_cubit.dart';
-import 'package:comp/features/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'di_container.dart' as di;

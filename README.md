@@ -26,11 +26,7 @@ video compress App with Flutter
 
 #### video Container in main Screen
 
-<img src="./wireframe/video_frame.png" width=180> 
-
-#### video Player
-
-<img src="./wireframe/player.png" width=180>
+<img src="./wireframe/video_frame.png" width=240> <img src="./wireframe/player.png" width=240>
 
 wireframe link 
 ```

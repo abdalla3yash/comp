@@ -1,7 +1,5 @@
 import 'dart:developer';
-
-import 'package:comp/config/navigation/navigation_services.dart';
-import 'package:comp/config/navigation/routes.dart';
+import 'package:comp/config/navigation/navigation.dart';
 import 'package:comp/config/theme/colors.dart';
 import 'package:comp/core/utils/values.dart';
 import 'package:comp/core/view/widgets/alerts.dart';
@@ -85,7 +83,9 @@ class VideoCard extends StatelessWidget {
                               color: AppColors.primary,
                               text: "View",
                               height: AppSize.s32,
-                              onPressed: () => null
+                              onPressed: () => NavigationService.push(
+                                  context, Routes.videoPlayerScreen,
+                                  arguments: {'videoPath': videoData.mediaInfo!.file!.path}),
                             ),
                             CustomButton(
                               borderRadius: AppSize.s8,

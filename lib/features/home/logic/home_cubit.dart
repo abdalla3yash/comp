@@ -53,4 +53,7 @@ class HomeCubit extends Cubit<HomeState> {
       emit(state.copyWith(requestState: RequestState.failure, failure: e.toString(), requestType: RequestType.pick));
     }
   }
+
+
+   Future cancel() async => _subscription!.unsubscribe();
 }
