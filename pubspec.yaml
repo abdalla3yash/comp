@@ -40,7 +40,7 @@ dependencies:
 
   # Utils
   image_picker: ^1.0.7
-  video_compress: ^3.1.2
+  video_compress_plus: ^1.0.0
   permission_handler: ^11.3.1
   dartz: ^0.10.1
 

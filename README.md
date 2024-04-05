@@ -2,14 +2,24 @@
 
 video compress App with Flutter 
 
-## commit 1
 
-init an empty project
+1- init an empty project
+2- Add Flutter Packages
+3- init IOS and Android
+4- draw wireframe
+5- start with view
 
-## commit 2
+## wireframe
 
-Add Flutter Packages
+#### video Container in main Screen
 
-## commit 3
+<img src="./wireframe/video_frame.png" width=180> 
 
-init IOS and Android
+#### video Player
+
+<img src="./wireframe/player.png" width=180>
+
+wireframe link 
+```
+https://app.moqups.com/bO2jKvSTFx6Hei47OoIS1wAV1aSALpR9/view/page/a880590a1
+```
