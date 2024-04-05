@@ -1,3 +1,4 @@
+import 'package:comp/config/theme/theme.dart';
 import 'package:comp/features/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Comp',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: theme(),
         home: HomeScreen());
   }
 }
